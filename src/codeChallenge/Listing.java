@@ -17,6 +17,14 @@ public class Listing {
 		return this.manufacturer;
 	}
 	
+	public String getPrice(){
+		return this.price;
+	}
+	
+	public String getCur(){
+		return this.currency;
+	}
+
 	public String getTitle(){
 		return this.title;
 	}

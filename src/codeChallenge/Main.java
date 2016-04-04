@@ -19,18 +19,19 @@ public class Main {
 		//"price": String // price, e.g. 19.99, 100.00}
 		try{
 			data = data.substring(1, data.length()-1);
-			String[] dataSplit = data.split(",");
+			String[] dataSplit = data.split("\",\"");
 			String title, manu, cur, price;
 			title = dataSplit[0].split(":")[1];
-			title = title.substring(1, title.length()-1);
+			title = title.substring(1, title.length());
 			manu = dataSplit[1].split(":")[1];
-			manu = manu.substring(1, manu.length()-1);
+			manu = manu.substring(1, manu.length());
 			cur = dataSplit[2].split(":")[1];
-			cur = cur.substring(1, cur.length()-1);
+			cur = cur.substring(1, cur.length());
 			price = dataSplit[3].split(":")[1];
 			price = price.substring(1, price.length()-1);
 			return new Listing(title, manu, cur, price);
 		}catch(Exception e){
+			e.printStackTrace();
 			return null;
 		}
 	}

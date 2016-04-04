@@ -21,12 +21,16 @@ public class Result {
 	}
 	
 	public String printForm(){
-		String result = "{\n\"product_name\": " + this.productName + "\n";
+		String result = "{\"product_name\": \"" + this.productName + "\", ";
 		result += "\"listings\": [";
 		for (Listing l : listings){
-			result += "\n\"" + l.getTitle() + "\"";
+			result += "{\"currency\": \"" + l.getCur() + "\", ";
+			result += "\"price\": \"" + l.getPrice()+ "\", ";
+			result += "\"manufacturer\": \"" + l.getManu() + "\", ";
+			result += "\"title\": \"" + l.getTitle() + "\"}, ";
 		}
-		result += "]\n";
-		return result + "\n}";
+		result = result.substring(0, result.length() - 3);
+		result += "]}\n";
+		return result	;
 	}
 }
